@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080706">
+  <meta name="description" content="MUNOTT — fais de belles rencontres près de chez toi en Afrique centrale.">
+  <title>MUNOTT — La rencontre, près de chez toi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{color-scheme:dark;--ink:#f3ece5;--muted:#b7aaa0;--green:#70452f;--green-dark:#4b2e21;--lime:#c69a70;--paper:#080706;--white:#181411;--line:#352a23;--shadow:0 18px 55px rgba(0,0,0,.45)}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",sans-serif;-webkit-font-smoothing:antialiased}button,input,select{font:inherit}button{cursor:pointer}a{color:inherit}.shell{width:min(1180px,calc(100% - 64px));margin:0 auto}
+    .topbar{height:82px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.09)}.brand{display:inline-flex;gap:10px;align-items:center;text-decoration:none;font:800 24px/1 "Manrope",sans-serif;letter-spacing:-.08em}.brand-mark{width:32px;height:32px;border-radius:50% 50% 50% 8px;background:var(--green);color:#f3ece5;display:grid;place-items:center;font-size:15px;letter-spacing:-.06em;transform:rotate(-8deg)}.brand-mark span{transform:rotate(8deg)}
+    .nav{display:flex;align-items:center;gap:34px}.nav a{text-decoration:none;color:#c4b9b0;font-size:13px;font-weight:600}.nav a:hover{color:var(--lime)}.nav-actions{display:flex;align-items:center;gap:12px}
+    .button{min-height:44px;padding:0 19px;border:0;border-radius:999px;font-size:13px;font-weight:700;transition:transform .18s,background .18s}.button:hover{transform:translateY(-1px)}.button-primary{background:var(--green);color:white}.button-primary:hover{background:var(--green-dark)}.button-light{background:#1b1714;color:var(--ink);border:1px solid var(--line)}.button-lime{background:var(--lime);color:#1a110c}.button-small{min-height:38px;padding:0 15px;font-size:12px}
+    .hero{display:grid;grid-template-columns:1fr 1.03fr;gap:64px;align-items:center;padding:56px 0 48px}.eyebrow{display:inline-flex;align-items:center;gap:8px;color:#e3c5a8;background:#2b1e16;border-radius:99px;padding:8px 12px;font-size:11px;font-weight:700;letter-spacing:.02em}.eyebrow-dot{width:7px;height:7px;border-radius:50%;background:#c69a70}h1,h2,h3,p{margin-top:0}
+    h1{max-width:540px;margin:22px 0 17px;font:700 clamp(42px,5.4vw,68px)/1.04 "Manrope",sans-serif;letter-spacing:-.07em}h1 em{color:#c69a70;font-style:normal}.hero-copy{max-width:410px;color:var(--muted);font-size:15px;line-height:1.75}.hero-actions{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-top:27px}.trust-line{display:flex;align-items:center;gap:10px;margin-top:27px;color:#b7aaa0;font-size:11px}.tiny-avatars{display:flex;padding-left:4px}.tiny-avatars img{width:25px;height:25px;object-fit:cover;border-radius:50%;border:2px solid var(--paper);margin-left:-5px}
+    .hero-visual{min-height:370px;border-radius:26px;position:relative;overflow:hidden;background:#241b16;isolation:isolate}.hero-visual::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,transparent 42%,rgba(8,7,6,.82));pointer-events:none}.hero-portrait{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.hero-note{position:absolute;z-index:2;top:23px;left:23px;background:rgba(24,20,17,.94);color:var(--ink);border:1px solid var(--line);border-radius:14px;padding:12px 15px;display:flex;gap:10px;align-items:center;box-shadow:0 8px 24px rgba(0,0,0,.3)}.note-icon{width:30px;height:30px;display:grid;place-items:center;border-radius:10px;background:var(--lime);color:#1a110c;font-size:15px}.hero-note strong{display:block;font-size:11px}.hero-note small{color:var(--muted);font-size:10px}.hero-caption{z-index:2;position:absolute;left:27px;bottom:25px;color:white}.hero-caption span{font-size:11px;opacity:.9}.hero-caption strong{display:block;margin-top:5px;font:700 23px "Manrope",sans-serif;letter-spacing:-.04em}.floating-heart{z-index:2;position:absolute;right:24px;bottom:25px;width:47px;height:47px;border-radius:50%;background:var(--lime);color:#1a110c;display:grid;place-items:center;font-size:20px}
+    .discovery{padding:18px 0 74px}.section-top{display:flex;justify-content:space-between;gap:24px;align-items:end;margin-bottom:22px}.section-top h2{margin:0 0 6px;font:700 29px/1.15 "Manrope",sans-serif;letter-spacing:-.055em}.section-top p{margin:0;color:var(--muted);font-size:13px}.filter-row{display:flex;align-items:center;gap:9px;flex-wrap:wrap}.filter-select{height:39px;border:1px solid var(--line);border-radius:99px;padding:0 32px 0 14px;color:var(--ink);background:var(--white);font-size:12px;outline:none}.filter-select:focus{border-color:#9f775a}
+    .free-note{margin:-7px 0 18px;padding:12px 15px;border:1px solid var(--line);border-radius:12px;background:#15110e;color:#c4b9b0;font-size:11px;line-height:1.5}.free-note strong{color:#d2ad8c}
+    .ai-note{margin:0 0 19px;padding:15px 17px;border:1px solid #493323;border-radius:13px;background:#211812;color:#decbb9;font-size:12px;line-height:1.6}.ai-note strong{color:#e1bd9a}.ai-badge{position:absolute;left:11px;bottom:11px;padding:6px 9px;border-radius:99px;background:rgba(24,20,17,.95);border:1px solid rgba(255,255,255,.15);color:#e1bd9a;font-size:9px;font-weight:700;letter-spacing:.02em}.ai-card .online{top:11px}
+    .cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:17px}.profile-card{overflow:hidden;border-radius:17px;background:var(--white);border:1px solid rgba(255,255,255,.07);transition:transform .2s,box-shadow .2s}.profile-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}.profile-photo{height:245px;position:relative;background:#211a16}.profile-photo img{display:block;width:100%;height:100%;object-fit:cover}.online{position:absolute;left:12px;top:12px;padding:6px 9px;border-radius:99px;display:inline-flex;align-items:center;gap:5px;background:rgba(24,20,17,.94);border:1px solid rgba(255,255,255,.12);color:#f3ece5;font-size:9px;font-weight:700}.online i{width:6px;height:6px;background:#c69a70;border-radius:50%}.card-like{position:absolute;right:11px;top:11px;border:1px solid rgba(255,255,255,.15);border-radius:50%;width:34px;height:34px;background:rgba(24,20,17,.94);font-size:16px;color:#f3ece5}.card-like.liked{color:#e98c80}.profile-info{padding:14px 14px 13px}.profile-name{display:flex;justify-content:space-between;align-items:center;gap:8px}.profile-name h3{margin:0;font:700 15px "Manrope",sans-serif;letter-spacing:-.035em}.profile-location{margin-top:5px;color:var(--muted);font-size:11px}.card-actions{display:flex;gap:8px;margin-top:14px}.card-actions button{flex:1}.card-actions .button-light{min-width:0;padding:0 9px}.empty-state{grid-column:1/-1;text-align:center;padding:45px 20px;color:var(--muted);background:var(--white);border-radius:16px}
+    .chat-log{height:260px;overflow:auto;display:flex;flex-direction:column;gap:9px;padding:13px;margin:0 0 12px;border:1px solid var(--line);border-radius:13px;background:#100e0c}.chat-bubble{max-width:85%;padding:9px 12px;border-radius:13px;font-size:12px;line-height:1.5;overflow-wrap:anywhere}.chat-bubble.ai{align-self:flex-start;background:#201a16;color:var(--ink);border:1px solid var(--line)}.chat-bubble.user{align-self:flex-end;background:var(--green);color:white}.chat-label{margin:0 0 3px;font-size:9px;font-weight:700;opacity:.74}.typing-note{color:var(--muted);font-size:10px}
+    .feature-band{border-radius:24px;padding:32px 36px;display:grid;grid-template-columns:1fr auto;gap:26px;align-items:center;background:var(--green);color:white;position:relative;overflow:hidden}.feature-band::after{content:"♡";position:absolute;right:28%;top:-52px;font-size:190px;font-weight:400;color:rgba(255,255,255,.045)}.feature-band h2{margin:0 0 9px;font:700 25px "Manrope",sans-serif;letter-spacing:-.05em}.feature-band p{margin:0;max-width:500px;font-size:12px;line-height:1.7;color:rgba(255,255,255,.73)}.feature-band .button{position:relative;z-index:1;white-space:nowrap}
+    .rules-strip{padding:26px 2px 0;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.rule{display:flex;gap:9px;align-items:flex-start;color:#c4b9b0;font-size:11px;line-height:1.5}.rule-icon{flex:0 0 26px;height:26px;border-radius:9px;display:grid;place-items:center;background:#2b1e16;color:#d8b798}.demo-notice{margin-top:28px;padding:12px 15px;border:1px solid var(--line);border-radius:12px;background:#14110f;color:#b7aaa0;font-size:10px;line-height:1.55}footer{border-top:1px solid var(--line);padding:21px 0 26px;display:flex;justify-content:space-between;gap:15px;color:var(--muted);font-size:10px}
+    .modal-backdrop{position:fixed;z-index:10;inset:0;padding:20px;display:none;place-items:center;background:rgba(0,0,0,.76);backdrop-filter:blur(5px)}.modal-backdrop.open{display:grid}.modal{width:min(440px,100%);max-height:min(90vh,780px);overflow:auto;padding:27px;border:1px solid var(--line);border-radius:21px;background:#171310;box-shadow:0 25px 80px rgba(0,0,0,.55);animation:appear .2s ease-out}@keyframes appear{from{opacity:0;transform:translateY(8px) scale(.99)}to{opacity:1;transform:none}}.modal-head{display:flex;justify-content:space-between;gap:15px;align-items:flex-start;margin-bottom:19px}.modal-head h2{margin:0 0 5px;font:700 23px "Manrope",sans-serif;letter-spacing:-.055em}.modal-head p{margin:0;color:var(--muted);font-size:12px;line-height:1.5}.close-modal{flex:0 0 32px;width:32px;height:32px;border:1px solid var(--line);border-radius:50%;background:#241d18;color:var(--ink);font-size:18px}.field{margin:13px 0}.field label{display:block;margin:0 0 6px;color:#ddd0c5;font-size:11px;font-weight:700}.field input,.field select{width:100%;height:44px;padding:0 12px;border:1px solid var(--line);border-radius:10px;background:#100e0c;color:var(--ink);outline:none;font-size:13px}.field input:focus,.field select:focus{border-color:#9f775a;box-shadow:0 0 0 3px rgba(112,69,47,.28)}.field input[type=file]{height:auto;padding:11px;font-size:11px}.hint{margin:5px 0 0;color:#b7aaa0;font-size:10px;line-height:1.45}.check-row{display:flex;gap:9px;align-items:flex-start;margin:14px 0;color:#c4b9b0;font-size:10px;line-height:1.55}.check-row input{margin-top:2px;accent-color:#9a6847}.full-width{width:100%}.form-error{display:none;margin:10px 0;color:#ff9c91;font-size:11px;line-height:1.5}.modal-footnote{text-align:center;color:#b7aaa0;font-size:10px;line-height:1.5;margin:12px 0 0}.match-mark{width:64px;height:64px;display:grid;place-items:center;margin:2px auto 15px;border-radius:50%;background:#3a211a;font-size:29px}.match-body{text-align:center;color:var(--muted);font-size:12px;line-height:1.65}.premium-price{display:flex;align-items:baseline;gap:7px;padding:15px 0}.premium-price strong{font:800 34px "Manrope",sans-serif;letter-spacing:-.07em}.premium-price span{color:var(--muted);font-size:12px}.benefits{list-style:none;padding:0;margin:2px 0 16px}.benefits li{padding:8px 0;border-top:1px solid var(--line);color:#ddd0c5;font-size:12px}.benefits li::before{content:"✓";color:#c69a70;font-weight:700;margin-right:9px}.toast{position:fixed;z-index:15;left:50%;bottom:24px;transform:translate(-50%,15px);padding:12px 17px;max-width:calc(100% - 30px);border-radius:99px;background:#241d18;color:var(--ink);border:1px solid var(--line);font-size:12px;text-align:center;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s}.toast.show{opacity:1;transform:translate(-50%,0)}
+    @media(max-width:900px){.hero{gap:32px;grid-template-columns:1fr 1fr}.cards{grid-template-columns:repeat(3,minmax(0,1fr))}.profile-photo{height:225px}.nav{gap:19px}}
+    @media(max-width:650px){.shell{width:min(100% - 36px,520px)}.topbar{height:67px}.brand{font-size:22px}.nav{display:none}.nav-actions .button-light{display:none}.nav-actions .button{min-height:38px;padding:0 14px}.hero{grid-template-columns:1fr;gap:24px;padding:37px 0 39px}h1{max-width:430px;margin-top:18px;font-size:clamp(42px,12vw,58px)}.hero-copy{font-size:14px}.hero-visual{min-height:295px}.hero-visual::before{background-position:center 34%}.discovery{padding:5px 0 48px}.section-top{align-items:flex-start;flex-direction:column;gap:16px}.section-top h2{font-size:25px}.filter-row{width:100%}.filter-select{flex:1;min-width:0}.cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.profile-photo{height:clamp(165px,52vw,230px)}.profile-info{padding:12px 10px}.profile-name h3{font-size:13px}.card-actions{gap:6px;margin-top:11px}.card-actions .button{min-height:35px;font-size:10px}.card-actions .button-primary{padding:0 7px}.feature-band{grid-template-columns:1fr;padding:25px 22px}.feature-band h2{font-size:22px}.feature-band .button{justify-self:start}.rules-strip{gap:15px;display:grid;grid-template-columns:1fr}footer{align-items:flex-start;flex-direction:column}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+  </style>
+</head>
+<body>
+  <header class="shell topbar">
+    <div class="nav-actions">
+  <button class="button button-light button-small" id="premiumTop">Découvrir Premium</button>
+  <button class="button button-light button-small" id="loginTop">Se connecter</button>
+  <button class="button button-primary button-small" id="signupTop">Créer mon profil</button>
+</div>
+</header>
+  <main class="shell">
+    <section class="hero">
+      <div>
+        <div class="eyebrow"><span class="eyebrow-dot"></span> Les rencontres d'Afrique centrale</div>
+        <h1>La belle rencontre, <em>près de chez toi.</em></h1>
+        <p class="hero-copy">Des profils sincères, des affinités qui se créent et des histoires qui commencent dans ta ville. À toi de faire le premier pas.</p>
+        <div class="hero-actions"><button class="button button-primary" id="signupHero">Créer mon profil <span aria-hidden="true">↗</span></button><a class="button button-light" href="#decouvrir" style="display:inline-flex;align-items:center;text-decoration:none">Explorer les profils</a></div>
+        <div class="trust-line"><span class="tiny-avatars" aria-hidden="true"><img id="avatarOne" alt=""><img id="avatarTwo" alt=""><img id="avatarThree" alt=""></span><span>Des compagnons IA transparents, en attendant les rencontres entre membres.</span></div>
+      </div>
+      <div class="hero-visual" role="img" aria-label="Illustration d'une femme noire souriante"><img class="hero-portrait" alt="" id="heroPortrait"><div class="hero-note"><span class="note-icon">⌖</span><span><strong>Tout près de toi</strong><small>Des profils de ta région</small></span></div><div class="hero-caption"><span>Une histoire peut commencer ici</span><strong>Et si c'était vous ?</strong></div><div class="floating-heart" aria-hidden="true">♡</div></div>
+    </section>
+    <section class="discovery" id="decouvrir">
+      <div class="section-top"><div><h2>Fais connaissance avec MUNOTT.</h2><p>Des compagnons IA pour discuter en attendant la communauté.</p></div><div class="filter-row" aria-label="Filtres de recherche"><select class="filter-select" id="cityFilter" aria-label="Filtrer par ville"><option value="">Toutes les villes</option></select><select class="filter-select" id="ageFilter" aria-label="Filtrer par tranche d'âge"><option value="">Tous les âges</option><option value="18-24">18–24 ans</option><option value="25-34">25–34 ans</option><option value="35-44">35–44 ans</option><option value="45-99">45 ans et +</option></select></div></div>
+      <div class="ai-note"><strong>Transparence :</strong> ces 20 personnages (10 femmes et 10 hommes) sont des illustrations et des compagnons IA, pas des membres réels. Chaque profil le signale. Leurs réponses sont simulées dans cette démo, sans modèle IA connecté; aucun match humain ni partage WhatsApp n'est possible avec eux.</div>
+      <p class="free-note">Compte gratuit : <strong>3 likes et 3 messages par jour.</strong> Besoin de plus ? Premium débloque les messages illimités, les likes reçus et la mise en avant.</p>
+      <div class="cards" id="profiles" aria-live="polite"></div>
+      <div class="demo-notice">Aperçu de démonstration : les portraits sont des illustrations de personnages noirs fictifs. Les 20 profils affichés sont des compagnons IA, pas de vrais membres; leurs réponses simulées restent dans cette page. Aucun paiement ni contact WhatsApp n'est déclenché depuis ces profils.</div>
+    </section>
+    <section class="feature-band" id="serieux"><div><h2>Ta prochaine belle histoire commence ici.</h2><p>Passe à Premium pour échanger sans limite, découvrir qui t'a liké et mettre ton profil en avant. 2 $ par semaine.</p></div><button class="button button-lime" id="premiumBand">Voir les avantages <span aria-hidden="true">↗</span></button></section>
+    <section class="rules-strip" aria-label="Nos règles de communauté">
+      <div class="rule"><span class="rule-icon">18+</span><span><strong>Réservé aux majeurs</strong><br>Tu dois avoir au moins 18 ans.</span></div><div class="rule"><span class="rule-icon">◎</span><span><strong>Une photo respectueuse</strong><br>Pas de nudité ni de contenu explicite.</span></div><div class="rule"><span class="rule-icon">◉</span><span><strong>WhatsApp confidentiel</strong><br>Ton numéro n'est jamais affiché sur ton profil.</span></div><div class="rule"><span class="rule-icon">♡</span><span><strong>Le respect avant tout</strong><br>Un match doit toujours être réciproque.</span></div>
+    </section>
+  </main>
+  <footer class="shell"><a class="brand" href="#" style="font-size:17px"><span class="brand-mark" style="width:25px;height:25px;font-size:12px"><span>m</span></span>MUNOTT</a><span>Fais de belles rencontres, en toute simplicité.</span><span>© 2026 MUNOTT · Démonstration</span></footer>
+
+  <div class="modal-backdrop" id="signupModal" role="dialog" aria-modal="true" aria-labelledby="signupTitle">
+    <form class="modal" id="signupForm"><div class="modal-head"><div><h2 id="signupTitle">Ton profil, en quelques instants.</h2><p>Les champs marqués d'un * sont obligatoires.</p></div><button type="button" class="close-modal" data-close aria-label="Fermer">×</button></div>
+      <div class="field"><label for="name">Ton prénom ou pseudo *</label><input id="name" name="name" autocomplete="given-name" maxlength="35" required placeholder="Ex. Amina"></div>
+      <div class="field">
+  <label for="email">Ton adresse e-mail *</label>
+  <input id="email" name="email" type="email"
+         autocomplete="email" required
+         placeholder="exemple@gmail.com">
+</div>
+
+<div class="field">
+  <label for="password">Ton mot de passe *</label>
+  <input id="password" name="password" type="password"
+         autocomplete="new-password" minlength="8"
+         required placeholder="8 caractères minimum">
+</div>
+
+<div class="field">
+  <label for="confirmPassword">Confirme ton mot de passe *</label>
+  <input id="confirmPassword" name="confirmPassword"
+         type="password" autocomplete="new-password"
+         minlength="8" required
+         placeholder="Répète ton mot de passe">
+</div>
+      <div class="field"><label for="age">Ton âge *</label><input id="age" name="age" type="number" min="18" max="99" required placeholder="18 ans ou plus"></div>
+      <div class="field"><label for="city">Ta ville *</label><select id="city" name="city" required><option value="">Choisir une ville</option><option>Kinshasa</option><option>Lubumbashi</option><option>Goma</option><option>Bukavu</option><option>Brazzaville</option><option>Pointe-Noire</option><option>Douala</option><option>Yaoundé</option><option>Libreville</option><option>Bangui</option><option>Autre</option></select></div>
+      <div class="field"><label for="photo">Ta photo de profil *</label><input id="photo" name="photo" type="file" accept="image/jpeg,image/png,image/webp" required><p class="hint">Photo obligatoire, sans nudité ni contenu explicite. 1,5 Mo maximum.</p></div>
+      <div class="field"><label for="whatsapp">Ton numéro WhatsApp * (indicatif pays inclus)</label><input id="whatsapp" name="whatsapp" type="tel" autocomplete="tel" required placeholder="+243 9xx xxx xxx"><p class="hint">Il restera privé et ne sera jamais visible sur ton profil.</p></div>
+      <label class="check-row"><input type="checkbox" id="rulesAccept" required><span>Je confirme avoir au moins 18 ans, que cette photo est la mienne et qu'elle ne contient pas de nudité. J'accepte les règles de respect et de sécurité.</span></label>
+      <p class="form-error" id="signupError" role="alert"></p><button class="button button-primary full-width" type="submit">Créer mon profil</button><p class="modal-footnote">Démo uniquement : tes informations restent dans le stockage local de cet appareil et ne sont envoyées à aucun serveur.</p>
+    </form>
+  </div>
+
+  <div class="modal-backdrop" id="loginModal" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+    <form class="modal" id="loginForm">
+      <div class="modal-head">
+        <div>
+          <h2 id="loginTitle">Heureux de te retrouver !</h2>
+          <p>Connecte-toi à ton compte MUNOTT.</p>
+        </div>
+        <button type="button" class="close-modal" data-close aria-label="Fermer">×</button>
+      </div>
+
+      <div class="field">
+        <label for="loginEmail">Ton adresse e-mail *</label>
+        <input id="loginEmail" name="email" type="email" autocomplete="email" required placeholder="exemple@gmail.com">
+      </div>
+      <div class="field">
+        <label for="loginPassword">Ton mot de passe *</label>
+        <input id="loginPassword" name="password" type="password" autocomplete="current-password" required placeholder="Ton mot de passe">
+      </div>
+
+      <p class="form-error" id="loginError" role="alert"></p>
+      <button class="button button-primary full-width" type="submit">Se connecter</button>
+    </form>
+  </div>
+  <div class="modal-backdrop" id="premiumModal" role="dialog" aria-modal="true" aria-labelledby="premiumTitle">
+    <div class="modal"><div class="modal-head"><div><h2 id="premiumTitle">Rencontre plus, avec Premium.</h2><p>Plus de liberté pour faire de belles rencontres.</p></div><button class="close-modal" data-close aria-label="Fermer">×</button></div>
+      <div class="premium-price"><strong>2 $</strong><span>/ semaine</span></div><ul class="benefits"><li>Messages illimités</li><li>Découvre qui a aimé ton profil</li><li>Ton profil mis en avant</li></ul>
+      <button class="button button-primary full-width" id="premiumPay">Demander l'abonnement sur WhatsApp</button><p class="modal-footnote">Le paiement s'effectue directement auprès de MUNOTT via WhatsApp au +243 998 353 158. Vérifie les conditions avant tout transfert.</p>
+      <div style="height:1px;background:var(--line);margin:19px 0"></div><h3 style="margin:0 0 5px;font:700 14px Manrope,sans-serif">Être le profil n°1 de ta ville</h3><p style="margin:0 0 12px;color:var(--muted);font-size:11px;line-height:1.5">Mise en avant pendant 24 heures · 2 $</p><button class="button button-light full-width" id="boostPay">Demander la mise en avant</button>
+    </div>
+  </div>
+  <div class="modal-backdrop" id="messageModal" role="dialog" aria-modal="true" aria-labelledby="messageTitle"><form class="modal" id="messageForm"><div class="modal-head"><div><h2 id="messageTitle">Discuter avec un compagnon IA.</h2><p id="messageSubtitle">Réponse simulée par le prototype, sans IA externe.</p></div><button type="button" class="close-modal" data-close aria-label="Fermer">×</button></div><div class="chat-log" id="chatMessages" aria-live="polite"></div><div class="field"><label for="messageText">Ton message</label><input id="messageText" maxlength="240" required placeholder="Écris un message…"></div><p class="form-error" id="messageError" role="alert"></p><button class="button button-primary full-width" type="submit">Envoyer</button><p class="modal-footnote">Tu échanges avec un personnage IA fictif, jamais avec une personne réelle.</p></form></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+    const SUPABASE_URL = "https://padkzzocpzokhtrsforv.supabase.co";
+    const SUPABASE_KEY = "sb_publishable_512a0RW2OzOFHJRJt-yjLA_TwYvWUWF";
+
+    const supabaseClient = window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_KEY
+    );
+
+async function saveUserProfile() {
+  const { data: authData, error: authError } =
+    await supabaseClient.auth.getUser();
+
+  if (authError || !authData.user) {
+    throw new Error("Connecte-toi avant d'enregistrer ton profil.");
+  }
+
+  const user = authData.user;
+  const name = document.querySelector("#name").value.trim();
+  const age = Number(document.querySelector("#age").value);
+  const city = document.querySelector("#city").value;
+  const phone = document.querySelector("#whatsapp").value.trim();
+  const file = document.querySelector("#photo").files[0];
+
+  if (!name || age < 18 || age > 99 || !city || !phone || !file) {
+    throw new Error("Remplis tous les champs obligatoires.");
+  }
+
+  if (!["image/jpeg", "image/png", "image/webp"].includes(file.type)) {
+    throw new Error("Choisis une photo JPG, PNG ou WebP.");
+  }
+
+  if (file.size > 1.5 * 1024 * 1024) {
+    throw new Error("La photo dépasse 1,5 Mo.");
+  }
+
+  const extension = file.type === "image/png" ? "png"
+    : file.type === "image/webp" ? "webp" : "jpg";
+
+  const filePath = `${user.id}/${crypto.randomUUID()}.${extension}`;
+
+  const { error: uploadError } = await supabaseClient.storage
+    .from("profile-photos")
+    .upload(filePath, file, {
+      contentType: file.type,
+      upsert: false
+    });
+
+  if (uploadError) throw uploadError;
+
+  const { error: profileError } = await supabaseClient
+    .from("profiles")
+    .upsert({
+      id: user.id,
+      display_name: name,
+      age,
+      city,
+      photo_url: filePath
+    });
+
+  if (profileError) throw profileError;
+
+  const { error: privateError } = await supabaseClient
+    .from("profile_private")
+    .upsert({
+      id: user.id,
+      whatsapp: phone
+    });
+
+  if (privateError) throw privateError;
+
+  return { name, age, city };
+}
+
+    console.log("Connexion Supabase initialisée !");
+    (() => {
+      const profiles=[
+        {id:"ai1",name:"Amina",age:26,city:"Kinshasa",gender:"F"},
+        {id:"ai2",name:"Grâce",age:24,city:"Douala",gender:"F"},
+        {id:"ai3",name:"Mireille",age:28,city:"Libreville",gender:"F"},
+        {id:"ai4",name:"Esther",age:23,city:"Goma",gender:"F"},
+        {id:"ai5",name:"Nadia",age:32,city:"Bangui",gender:"F"},
+        {id:"ai6",name:"Chantal",age:30,city:"Bukavu",gender:"F"},
+        {id:"ai7",name:"Grâce",age:27,city:"Yaoundé",gender:"F"},
+        {id:"ai8",name:"Béatrice",age:34,city:"Pointe-Noire",gender:"F"},
+        {id:"ai9",name:"Merveille",age:25,city:"Lubumbashi",gender:"F"},
+        {id:"ai10",name:"Joséphine",age:29,city:"Brazzaville",gender:"F"},
+        {id:"ai11",name:"Junior",age:29,city:"Brazzaville",gender:"M"},
+        {id:"ai12",name:"David",age:31,city:"Kinshasa",gender:"M"},
+        {id:"ai13",name:"Patrick",age:35,city:"Lubumbashi",gender:"M"},
+        {id:"ai14",name:"Samuel",age:27,city:"Yaoundé",gender:"M"},
+        {id:"ai15",name:"Kevin",age:25,city:"Pointe-Noire",gender:"M"},
+        {id:"ai16",name:"Fabrice",age:38,city:"Douala",gender:"M"},
+        {id:"ai17",name:"Landry",age:30,city:"Goma",gender:"M"},
+        {id:"ai18",name:"Armand",age:33,city:"Bangui",gender:"M"},
+        {id:"ai19",name:"Cédric",age:28,city:"Libreville",gender:"M"},
+        {id:"ai20",name:"Joël",age:26,city:"Bukavu",gender:"M"}
+      ];
+      const now=new Date(),storageKey="munott-demo-v1",dayKey=`${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,"0")}-${String(now.getDate()).padStart(2,"0")}`;
+      let state={};
+      try{state=JSON.parse(localStorage.getItem(storageKey)||"{}")}catch(error){console.error("Impossible de lire les données locales MUNOTT.",error)}
+      if(state.day!==dayKey)state={...state,day:dayKey,likesToday:0,messagesToday:0};
+      state.likes=Array.isArray(state.likes)?state.likes:[];state.profile=state.profile&&typeof state.profile==="object"?state.profile:null;state.premium=Boolean(state.premium);
+     let messageTarget=null,toastTimer;
+let completingProfile = false;
+      const conversations=new Map();
+      const $=selector=>document.querySelector(selector);
+      const escapeHTML=value=>String(value).replace(/[&<>"']/g,char=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[char]);
+      const portraitPhotos=[
+        "photo-1713845784497-fe3d7ed176d8","photo-1531123897727-8f129e1688ce","photo-1532076904124-d4e8fe7fbbec",
+        "photo-1669040302619-46d18315f7d3","photo-1487546331507-fcf8a5d27ab3","photo-1586171984069-1dbce3573a10",
+        "photo-1765607476255-1299b03d3c4f","photo-1548207775-a7676e36f20a","photo-1669040084821-097235fe53ff",
+        "photo-1524250502761-1ac6f2e30d43","photo-1531299983330-093763e1d963","photo-1562173650-f61426fbe683",
+        "photo-1551944636-a2b3624bd216","photo-1659093728055-45f8275166d9","photo-1612214070475-1e73f478188c",
+        "photo-1560856218-0da41ac7c66a","photo-1531299983330-093763e1d963","photo-1562173650-f61426fbe683",
+        "photo-1551944636-a2b3624bd216","photo-1531123897727-8f129e1688ce"
+      ];
+      profiles.forEach((profile,index)=>{profile.photo=portraitPhotos[index]});
+      const imageURL=(id,width=600)=>`https://images.unsplash.com/${id}?auto=format&fit=crop&w=${width}&q=80`;
+      const portrait=profile=>imageURL(profile.photo||portraitPhotos[Number(profile.id.replace("ai",""))-1]);
+      const save=()=>{try{localStorage.setItem(storageKey,JSON.stringify(state))}catch(error){console.error("Impossible d'enregistrer les données de démonstration.",error);showToast("Stockage local indisponible. Ton profil n'a pas pu être enregistré.");throw error}};
+      const showToast=message=>{const toast=$("#toast");toast.textContent=message;toast.classList.add("show");clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove("show"),3200)};
+      const openModal=id=>{const modal=document.getElementById(id);modal.classList.add("open");const focusable=modal.querySelector("input,select,button");if(focusable)setTimeout(()=>focusable.focus(),30)};
+      const closeModal=modal=>modal.classList.remove("open");
+      function renderProfiles(){
+        const city=$("#cityFilter").value,ageRange=$("#ageFilter").value,[minAge,maxAge]=ageRange?ageRange.split("-").map(Number):[0,999];
+        const list=profiles.filter(profile=>(!city||profile.city===city)&&profile.age>=minAge&&profile.age<=maxAge);
+        $("#profiles").innerHTML=list.length?list.map(profile=>{
+          const liked=state.likes.includes(profile.id);
+          const gender=profile.gender==="F"?"Femme":"Homme";
+          return `<article class="profile-card ai-card"><div class="profile-photo"><img src="${portrait(profile)}" alt="Photo illustrative de ${gender.toLowerCase()} noir·e, profil fictif" loading="lazy"><span class="online"><i></i>Disponible</span><span class="ai-badge">COMPAGNON IA</span><button class="card-like${liked?" liked":""}" data-like="${profile.id}" aria-label="${liked?"Retirer le like de":"Liker"} ${escapeHTML(profile.name)}" aria-pressed="${liked}">${liked?"♥":"♡"}</button></div><div class="profile-info"><div class="profile-name"><h3>${escapeHTML(profile.name)}, ${profile.age}</h3></div><div class="profile-location">⌖ &nbsp;${escapeHTML(profile.city)} · ${gender}</div><div class="card-actions"><button class="button button-primary button-small" data-like="${profile.id}">${liked?"Aimé ✓":"J'aime"}</button><button class="button button-light button-small" data-message="${profile.id}">Discuter</button></div></div></article>`;
+        }).join(""):'<div class="empty-state">Aucun profil dans cette sélection. Essaie une autre ville ou tranche d’âge.</div>';
+      }
+      $("#heroPortrait").src=portrait({id:"ai1",gender:"F"});
+      $("#avatarOne").src=portrait({id:"ai1",gender:"F"});
+      $("#avatarTwo").src=portrait({id:"ai12",gender:"M"});
+      $("#avatarThree").src=portrait({id:"ai2",gender:"F"});
+      function renderConversation(){
+        const log=$("#chatMessages"),messages=conversations.get(messageTarget.id)||[];
+        log.replaceChildren();
+        messages.forEach(message=>{
+          const bubble=document.createElement("div");
+          bubble.className=`chat-bubble ${message.speaker}`;
+          if(message.speaker==="ai"){
+            const label=document.createElement("div");
+            label.className="chat-label";
+            label.textContent=`${messageTarget.name} · personnage IA`;
+            bubble.append(label);
+          }
+          const text=document.createElement("div");
+          text.textContent=message.text;
+          bubble.append(text);
+          log.append(bubble);
+        });
+        log.scrollTop=log.scrollHeight;
+      }
+      function generateDemoReply(profile,text){
+        const normalized=text.toLocaleLowerCase("fr");
+        const replies=normalized.match(/aime|passion|loisir|musique|danse|sport|film|week/)
+          ?[`J'aime bien les discussions autour de la musique, des bons plats et des projets qui nous motivent. Et toi, qu'est-ce qui te passionne ?`,`Belle question ! Pour ma persona, je choisirais la musique et découvrir de nouveaux endroits. Qu'est-ce que tu aimes faire pendant ton temps libre ?`]
+          :normalized.match(/rencontre|relation|amour|couple|sortir|rendez-vous/)
+          ?[`Je peux papoter avec toi, mais je suis une IA : je ne peux pas vivre une relation ni faire de rencontre dans la vraie vie. Qu'est-ce qui compte le plus pour toi dans une relation ?`,`Merci de me le dire. Juste pour être clair·e, je suis un personnage IA et pas une personne disponible pour une rencontre. On peut discuter de ce que tu recherches chez quelqu'un.`]
+          :normalized.match(/ville|kinshasa|douala|brazzaville|goma|yaound|lubumbashi|bukavu|libreville|bangui/)
+          ?[`Je suis un personnage IA associé à ${profile.city} dans cette démo, pas une vraie personne qui y habite. Qu'est-ce que tu aimes dans cette ville ?`,`${profile.city} est ma ville fictive pour cette conversation. Raconte-moi plutôt ce que tu apprécies dans ta région !`]
+          :normalized.match(/bonjour|salut|coucou|bonsoir/)
+          ?[`Salut ! Ça me fait plaisir de discuter avec toi. Comment se passe ta journée ?`,`Bonjour 😊 Content·e de faire ta connaissance ici. Qu'est-ce qui te met de bonne humeur aujourd'hui ?`]
+          :[`Merci pour ton message ! Je suis ${profile.name}, un personnage IA de démonstration. Dis-m'en un peu plus ?`,`Je vois 😊 Je suis une IA, donc mes réponses sont simulées. Qu'aimerais-tu raconter ou découvrir aujourd'hui ?`,`Intéressant ! Comme je suis un personnage fictif, je peux surtout t'écouter et discuter. Qu'est-ce qui t'a donné envie d'en parler ?`];
+        const index=(Number(profile.id.replace("ai",""))+text.length)%replies.length;
+        return replies[index];
+      }
+      function fillCityFilter(){[...new Set(profiles.map(profile=>profile.city))].sort((a,b)=>a.localeCompare(b,"fr")).forEach(city=>$("#cityFilter").insertAdjacentHTML("beforeend",`<option value="${escapeHTML(city)}">${escapeHTML(city)}</option>`))}
+      function requireProfile(){if(state.profile)return true;openModal("signupModal");showToast("Crée d'abord ton profil pour continuer.");return false}
+      function likeProfile(id){
+        if(!requireProfile())return;
+        const alreadyLiked=state.likes.includes(id);
+        if(!alreadyLiked&&!state.premium&&(state.likesToday||0)>=3){showToast("Tu as utilisé tes 3 likes gratuits aujourd'hui. Découvre Premium.");openModal("premiumModal");return}
+        state.likes=alreadyLiked?state.likes.filter(likedId=>likedId!==id):[...state.likes,id];
+        if(!alreadyLiked)state.likesToday=(state.likesToday||0)+1;
+        save();renderProfiles();
+        const profile=profiles.find(item=>item.id===id);
+        showToast(alreadyLiked?"Like retiré.":"Like noté. Ce profil est un personnage IA, pas un membre réel.");
+      }
+      fillCityFilter();renderProfiles();
+      $("#cityFilter").addEventListener("change",renderProfiles);$("#ageFilter").addEventListener("change",renderProfiles);
+      document.addEventListener("click",event=>{
+        const likeButton=event.target.closest("[data-like]"),messageButton=event.target.closest("[data-message]");
+        if(likeButton)likeProfile(likeButton.dataset.like);
+        if(messageButton){if(!requireProfile())return;messageTarget=profiles.find(profile=>profile.id===messageButton.dataset.message);if(!conversations.has(messageTarget.id))conversations.set(messageTarget.id,[{speaker:"ai",text:`Salut ! Je suis ${messageTarget.name}, un personnage IA fictif. Je ne suis pas une vraie personne, mais je peux discuter avec toi.`}]);$("#messageSubtitle").textContent=`Discussion de démonstration avec ${messageTarget.name}, personnage IA.`;$("#messageText").value="";$("#messageError").style.display="none";renderConversation();openModal("messageModal")}
+        if(event.target.matches("[data-close]"))closeModal(event.target.closest(".modal-backdrop"));
+        if(event.target.classList.contains("modal-backdrop"))closeModal(event.target);
+      });
+      ["signupTop","signupHero"].forEach(id=>document.getElementById(id).addEventListener("click",()=>openModal("signupModal")));
+      ["premiumTop","premiumBand"].forEach(id=>document.getElementById(id).addEventListener("click",()=>openModal("premiumModal")));
+      document.getElementById("loginTop").addEventListener("click",()=>openModal("loginModal"));
+     
+$("#loginForm").addEventListener("submit", async event => {
+  event.preventDefault();
+
+  const errorBox = $("#loginError");
+  errorBox.style.display = "none";
+
+  const email = $("#loginEmail").value.trim();
+  const password = $("#loginPassword").value;
+
+  try {
+    const { data, error } = await supabaseClient.auth.signInWithPassword({
+      email,
+      password
+    });
+
+    if (error) {
+      errorBox.textContent = "Adresse e-mail ou mot de passe incorrect.";
+      errorBox.style.display = "block";
+      return;
+    }
+
+    const { data: profile, error: profileError } = await supabaseClient
+      .from("profiles")
+      .select("id, display_name, age, city, photo_url")
+      .eq("id", data.user.id)
+      .maybeSingle();
+
+    if (profileError) {
+      errorBox.textContent = "Impossible de vérifier ton profil. Réessaie.";
+      errorBox.style.display = "block";
+      console.error(profileError);
+      return;
+    }
+
+    closeModal($("#loginModal"));
+
+    if (!profile) {
+      completingProfile = true;
+
+      ["email", "password", "confirmPassword"].forEach(id => {
+        const field = document.getElementById(id);
+        field.disabled = true;
+        field.required = false;
+        field.closest(".field").hidden = true;
+      });
+
+      openModal("signupModal");
+      showToast("Bienvenue ! Termine maintenant ton profil.");
+    } else {
+      state.profile = {
+        name: profile.display_name,
+        age: profile.age,
+        city: profile.city,
+        photo: profile.photo_url
+      };
+
+      save();
+      showToast("Bienvenue sur MUNOTT !");
+      console.log("Profil retrouvé :", profile);
+    }
+
+  } catch (error) {
+    errorBox.textContent = "Une erreur est survenue. Réessaie.";
+    errorBox.style.display = "block";
+    console.error(error);
+  }
+});
+
+$("#signupForm").addEventListener("submit", async event => {
+  event.preventDefault();
+
+  const errorBox = $("#signupError");
+  errorBox.style.display = "none";
+
+  const showError = message => {
+    errorBox.textContent = message;
+    errorBox.style.display = "block";
+  };
+
+  try {
+    // CAS 1 : utilisateur déjà connecté qui complète son profil
+    if (completingProfile) {
+      const result = await saveUserProfile();
+
+      const { data: authData, error: authError } =
+        await supabaseClient.auth.getUser();
+
+      if (authError || !authData.user) {
+        throw new Error("Session utilisateur introuvable.");
+      }
+
+      state.profile = {
+        id: authData.user.id,
+        name: result.name,
+        age: result.age,
+        city: result.city
+      };
+
+      save();
+
+      completingProfile = false;
+
+      $("#email").disabled = false;
+      $("#password").disabled = false;
+      $("#confirmPassword").disabled = false;
+
+      closeModal($("#signupModal"));
+      showToast("Ton profil MUNOTT a été enregistré avec succès !");
+      return;
+    }
+
+    // CAS 2 : nouvel utilisateur qui crée son compte
+    const email = $("#email").value.trim();
+    const password = $("#password").value;
+    const confirmPassword = $("#confirmPassword").value;
+
+    if (password.length < 8) {
+      showError("Le mot de passe doit contenir au moins 8 caractères.");
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      showError("Les deux mots de passe ne correspondent pas.");
+      return;
+    }
+
+    const { error } = await supabaseClient.auth.signUp({
+      email,
+      password,
+      options: {
+        emailRedirectTo: window.location.origin + window.location.pathname
+      }
+    });
+
+    if (error) {
+      showError(error.message);
+      return;
+    }
+
+    showToast("Compte créé ! Consulte ta boîte e-mail pour confirmer ton adresse.");
+    closeModal($("#signupModal"));
+
+  } catch (error) {
+    console.error("Erreur MUNOTT :", error);
+    showError(error.message || "Une erreur est survenue. Réessaie.");
+  }
+});
+      $("#messageForm").addEventListener("submit",event=>{
+        event.preventDefault();const errorBox=$("#messageError");
+        if(!$("#messageText").value.trim()){errorBox.textContent="Écris ton message avant de l'envoyer.";errorBox.style.display="block";return}
+        if(!state.premium&&(state.messagesToday||0)>=3){errorBox.textContent="Tu as utilisé tes 3 messages gratuits aujourd'hui. Passe à Premium pour écrire sans limite.";errorBox.style.display="block";return}
+        state.messagesToday=(state.messagesToday||0)+1;save();
+        conversations.get(messageTarget.id).push({speaker:"user",text:$("#messageText").value.trim()});
+        const input=$("#messageText"),submitButton=$("#messageForm button[type=submit]"),sentText=input.value.trim();
+        input.value="";input.disabled=true;submitButton.disabled=true;submitButton.textContent="Réponse…";renderConversation();
+        const replyTarget=messageTarget;
+        setTimeout(()=>{
+          conversations.get(replyTarget.id).push({speaker:"ai",text:generateDemoReply(replyTarget,sentText)});
+          input.disabled=false;submitButton.disabled=false;submitButton.textContent="Envoyer";renderConversation();input.focus();
+        },450);
+      });
+      const openPayment=text=>window.open(`https://wa.me/243998353158?text=${encodeURIComponent(text)}`,"_blank","noopener,noreferrer");
+      $("#premiumPay").addEventListener("click",()=>openPayment("Bonjour MUNOTT, je souhaite m'abonner à Premium pour 2 $ par semaine."));
+      $("#boostPay").addEventListener("click",()=>openPayment("Bonjour MUNOTT, je souhaite être le profil n°1 de ma ville pendant 24 h pour 2 $."));
+      document.addEventListener("keydown",event=>{if(event.key==="Escape")document.querySelectorAll(".modal-backdrop.open").forEach(closeModal)});
+    })();
+  </script>
+</body>
+</html>
