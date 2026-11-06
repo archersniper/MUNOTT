@@ -139,7 +139,27 @@
         SUPABASE_URL,
         SUPABASE_KEY
     );
-
+function updateAuthUI(session) {
+  const signupTop = document.getElementById("signupTop");
+  const signupHero = document.getElementById("signupHero");
+  if (session) {
+    if (signupTop) signupTop.style.display = "none";
+    if (signupHero) signupHero.style.display = "none";
+  } else {
+    if (signupTop) signupTop.style.display = "";
+    if (signupHero) signupHero.style.display = "";
+  }
+}
+// Vérifier si un utilisateur est déjà connecté
+supabaseClient.auth.getSession().then(({ data, error }) => {
+  if (!error) {
+    updateAuthUI(data.session);
+  }
+});
+// Actualiser les boutons à chaque connexion ou déconnexion
+supabaseClient.auth.onAuthStateChange((event, session) => {
+  updateAuthUI(session);
+});
 async function saveUserProfile() {
   const { data: authData, error: authError } =
     await supabaseClient.auth.getUser();
