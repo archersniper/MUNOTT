@@ -29,10 +29,66 @@
     @media(max-width:900px){.hero{gap:32px;grid-template-columns:1fr 1fr}.cards{grid-template-columns:repeat(3,minmax(0,1fr))}.profile-photo{height:225px}.nav{gap:19px}}
     @media(max-width:650px){.shell{width:min(100% - 36px,520px)}.topbar{height:67px}.brand{font-size:22px}.nav{display:none}.nav-actions .button-light{display:none}.nav-actions .button{min-height:38px;padding:0 14px}.hero{grid-template-columns:1fr;gap:24px;padding:37px 0 39px}h1{max-width:430px;margin-top:18px;font-size:clamp(42px,12vw,58px)}.hero-copy{font-size:14px}.hero-visual{min-height:295px}.hero-visual::before{background-position:center 34%}.discovery{padding:5px 0 48px}.section-top{align-items:flex-start;flex-direction:column;gap:16px}.section-top h2{font-size:25px}.filter-row{width:100%}.filter-select{flex:1;min-width:0}.cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.profile-photo{height:clamp(165px,52vw,230px)}.profile-info{padding:12px 10px}.profile-name h3{font-size:13px}.card-actions{gap:6px;margin-top:11px}.card-actions .button{min-height:35px;font-size:10px}.card-actions .button-primary{padding:0 7px}.feature-band{grid-template-columns:1fr;padding:25px 22px}.feature-band h2{font-size:22px}.feature-band .button{justify-self:start}.rules-strip{gap:15px;display:grid;grid-template-columns:1fr}footer{align-items:flex-start;flex-direction:column}}
     @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+
+    body{padding-bottom:100px}
+    .bottom-nav{position:fixed;z-index:20;left:50%;bottom:12px;transform:translateX(-50%);width:min(560px,calc(100% - 24px));display:grid;grid-template-columns:repeat(3,1fr);gap:7px;padding:8px;border:1px solid var(--line);border-radius:18px;background:rgba(23,19,16,.96);box-shadow:0 12px 40px rgba(0,0,0,.45);backdrop-filter:blur(14px)}
+    .bottom-nav button{min-height:48px;border:0;border-radius:12px;background:transparent;color:var(--muted);font:700 11px Manrope,sans-serif}
+    .bottom-nav button span{display:block;margin-bottom:3px;font-size:17px}
+    .bottom-nav button.active{background:#30231b;color:#f3ece5}
+    .app-page[hidden]{display:none!important}
+    .app-page{padding-bottom:26px}
+    .top-profile{margin:0 0 30px;padding:24px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(125deg,#251a14,#171310)}
+    .top-profile-head{display:flex;justify-content:space-between;align-items:end;gap:18px;margin-bottom:17px}
+    .top-profile-head h2{margin:4px 0 6px;font:700 25px Manrope,sans-serif;letter-spacing:-.05em}
+    .top-profile-head p{margin:0;color:var(--muted);font-size:12px}
+    .top-profile-head select{height:40px;min-width:150px;padding:0 12px;border:1px solid var(--line);border-radius:12px;background:#100e0c;color:var(--ink)}
+    .top-profile-content{min-height:125px}
+    .top-profile-card{display:grid;grid-template-columns:180px 1fr;gap:19px;align-items:center}
+    .top-profile-photo{width:100%;height:170px;object-fit:cover;border-radius:15px;background:#211a16}
+    .top-profile-copy h3{margin:5px 0;font:700 22px Manrope,sans-serif}
+    .top-profile-copy p{margin:0 0 12px;color:var(--muted);font-size:12px}
+    .profile-rank{display:inline-flex;padding:6px 10px;border-radius:99px;background:#3a281c;color:#e1bd9a;font-size:10px;font-weight:800;letter-spacing:.06em}
+    .profile-like-count{color:#e1bd9a;font-weight:700}
+    .member-section{margin:0 0 32px}
+    .member-section h2{margin:0 0 6px;font:700 24px Manrope,sans-serif;letter-spacing:-.04em}
+    .member-section>p{color:var(--muted);font-size:12px}
+    .member-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}
+    .member-grid .profile-photo{height:215px}
+    .member-grid .member-empty{grid-column:1/-1;padding:24px;border:1px dashed #604b3b;border-radius:15px;color:var(--muted);font-size:13px;line-height:1.6}
+    .app-page#messagesPage{padding-bottom:35px}
+    .messages-heading{padding:28px 0 12px}
+    .messages-heading h1,.personal-panel h1{margin:0 0 8px;font:700 clamp(32px,5vw,46px) Manrope,sans-serif;letter-spacing:-.055em}
+    .messages-heading p,.personal-panel>p{color:var(--muted);font-size:13px;line-height:1.65}
+    .personal-panel{padding:28px 0 40px;min-height:55vh}
+    .personal-card{max-width:660px;padding:22px;border:1px solid var(--line);border-radius:17px;background:#171310}
+    .personal-info{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0}
+    .personal-info div{padding:13px;border-radius:11px;background:#211a16}
+    .personal-info small{display:block;color:var(--muted);margin-bottom:5px;font-size:10px}
+    .personal-info strong{font-size:13px;overflow-wrap:anywhere}
+    .profile-placeholder{display:grid;place-items:center;color:#e1bd9a;font:800 45px Manrope,sans-serif}
+    @media(max-width:900px){.member-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+    @media(max-width:650px){
+      body{padding-bottom:86px}
+      .bottom-nav{bottom:8px}
+      .top-profile{padding:17px}
+      .top-profile-head{align-items:flex-start;flex-direction:column}
+      .top-profile-head h2{font-size:22px}
+      .top-profile-card{grid-template-columns:110px 1fr;gap:13px}
+      .top-profile-photo{height:130px}
+      .top-profile-copy h3{font-size:17px}
+      .member-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+      .member-grid .profile-photo{height:clamp(155px,45vw,220px)}
+      .personal-info{grid-template-columns:1fr}
+    }
+
+
+    .otp-code{text-align:center;letter-spacing:.35em;font-size:20px!important;font-weight:800}
+
   </style>
 </head>
 <body>
   <header class="shell topbar">
+    <a class="brand" href="#homePage" aria-label="MUNOTT accueil"><span class="brand-mark"><span>m</span></span>MUNOTT</a>
     <div class="nav-actions">
   <button class="button button-light button-small" id="premiumTop">Découvrir Premium</button>
   <button class="button button-light button-small" id="loginTop">Se connecter</button>
@@ -53,7 +109,7 @@
     <section class="discovery" id="decouvrir">
       <div class="section-top"><div><h2>Fais connaissance avec MUNOTT.</h2><p>Des compagnons IA pour discuter en attendant la communauté.</p></div><div class="filter-row" aria-label="Filtres de recherche"><select class="filter-select" id="cityFilter" aria-label="Filtrer par ville"><option value="">Toutes les villes</option></select><select class="filter-select" id="ageFilter" aria-label="Filtrer par tranche d'âge"><option value="">Tous les âges</option><option value="18-24">18–24 ans</option><option value="25-34">25–34 ans</option><option value="35-44">35–44 ans</option><option value="45-99">45 ans et +</option></select></div></div>
       <div class="ai-note"><strong>Transparence :</strong> ces 20 personnages (10 femmes et 10 hommes) sont des illustrations et des compagnons IA, pas des membres réels. Chaque profil le signale. Leurs réponses sont simulées dans cette démo, sans modèle IA connecté; aucun match humain ni partage WhatsApp n'est possible avec eux.</div>
-      <p class="free-note">Compte gratuit : <strong>3 likes et 3 messages par jour.</strong> Besoin de plus ? Premium débloque les messages illimités, les likes reçus et la mise en avant.</p>
+      <p class="free-note"><strong>MUNOTT+ est nécessaire pour parler aux compagnons IA.</strong> Explore les profils ici, puis passe à l’onglet Messages pour discuter.</p>
       <div class="cards" id="profiles" aria-live="polite"></div>
       <div class="demo-notice">Aperçu de démonstration : les portraits sont des illustrations de personnages noirs fictifs. Les 20 profils affichés sont des compagnons IA, pas de vrais membres; leurs réponses simulées restent dans cette page. Aucun paiement ni contact WhatsApp n'est déclenché depuis ces profils.</div>
     </section>
@@ -93,7 +149,19 @@
       <div class="field"><label for="photo">Ta photo de profil *</label><input id="photo" name="photo" type="file" accept="image/jpeg,image/png,image/webp" required><p class="hint">Photo obligatoire, sans nudité ni contenu explicite. 5 Mo maximum.</p></div>
       <div class="field"><label for="whatsapp">Ton numéro WhatsApp * (indicatif pays inclus)</label><input id="whatsapp" name="whatsapp" type="tel" autocomplete="tel" required placeholder="+243 9xx xxx xxx"><p class="hint">Il restera privé et ne sera jamais visible sur ton profil.</p></div>
       <label class="check-row"><input type="checkbox" id="rulesAccept" required><span>Je confirme avoir au moins 18 ans, que cette photo est la mienne et qu'elle ne contient pas de nudité. J'accepte les règles de respect et de sécurité.</span></label>
-      <p class="form-error" id="signupError" role="alert"></p><button class="button button-primary full-width" type="submit">Créer mon profil</button><p class="modal-footnote">Démo uniquement : tes informations restent dans le stockage local de cet appareil et ne sont envoyées à aucun serveur.</p>
+      <p class="form-error" id="signupError" role="alert"></p><button class="button button-primary full-width" type="submit">Créer mon profil</button><p class="modal-footnote">Après confirmation de ton adresse, tes informations de profil seront enregistrées dans Supabase. Ton numéro WhatsApp reste privé.</p>
+    </form>
+  </div>
+
+
+  <div class="modal-backdrop" id="signupOtpModal" role="dialog" aria-modal="true" aria-labelledby="signupOtpTitle">
+    <form class="modal" id="signupOtpForm">
+      <div class="modal-head"><div><h2 id="signupOtpTitle">Confirme ton adresse e-mail</h2><p>Entre le code à 6 chiffres envoyé à <strong id="signupOtpEmail"></strong>.</p></div><button type="button" class="close-modal" data-close aria-label="Fermer">×</button></div>
+      <div class="field"><label for="signupOtp">Code de confirmation *</label><input id="signupOtp" name="token" class="otp-code" type="text" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" minlength="6" maxlength="6" required placeholder="000000" aria-describedby="signupOtpHint"></div>
+      <p class="hint" id="signupOtpHint">Le code expire selon le délai configuré dans Supabase.</p>
+      <p class="form-error" id="signupOtpError" role="alert"></p>
+      <button class="button button-primary full-width" type="submit">Confirmer et créer mon profil</button>
+      <button class="button button-light full-width" id="resendSignupOtp" type="button" style="margin-top:9px">Renvoyer le code</button>
     </form>
   </div>
 
@@ -121,13 +189,19 @@
     </form>
   </div>
   <div class="modal-backdrop" id="premiumModal" role="dialog" aria-modal="true" aria-labelledby="premiumTitle">
-    <div class="modal"><div class="modal-head"><div><h2 id="premiumTitle">Rencontre plus, avec Premium.</h2><p>Plus de liberté pour faire de belles rencontres.</p></div><button class="close-modal" data-close aria-label="Fermer">×</button></div>
+    <div class="modal"><div class="modal-head"><div><h2 id="premiumTitle">Passe à MUNOTT+.</h2><p>Débloque les conversations avec tous les compagnons IA.</p></div><button class="close-modal" data-close aria-label="Fermer">×</button></div>
       <div class="premium-price"><strong>2 $</strong><span>/ semaine</span></div><ul class="benefits"><li>Messages illimités</li><li>Découvre qui a aimé ton profil</li><li>Ton profil mis en avant</li></ul>
-      <button class="button button-primary full-width" id="premiumPay">Demander l'abonnement sur WhatsApp</button><p class="modal-footnote">Le paiement s'effectue directement auprès de MUNOTT via WhatsApp au +243 998 353 158. Vérifie les conditions avant tout transfert.</p>
+      <button class="button button-primary full-width" id="premiumPay">Demander l'abonnement sur WhatsApp</button><p class="modal-footnote">Envoie ta demande à l’équipe MUNOTT sur WhatsApp. L’accès MUNOTT+ est activé après confirmation de l’abonnement.</p>
       <div style="height:1px;background:var(--line);margin:19px 0"></div><h3 style="margin:0 0 5px;font:700 14px Manrope,sans-serif">Être le profil n°1 de ta ville</h3><p style="margin:0 0 12px;color:var(--muted);font-size:11px;line-height:1.5">Mise en avant pendant 24 heures · 2 $</p><button class="button button-light full-width" id="boostPay">Demander la mise en avant</button>
     </div>
   </div>
   <div class="modal-backdrop" id="messageModal" role="dialog" aria-modal="true" aria-labelledby="messageTitle"><form class="modal" id="messageForm"><div class="modal-head"><div><h2 id="messageTitle">Discuter avec un compagnon IA.</h2><p id="messageSubtitle">Réponse simulée par le prototype, sans IA externe.</p></div><button type="button" class="close-modal" data-close aria-label="Fermer">×</button></div><div class="chat-log" id="chatMessages" aria-live="polite"></div><div class="field"><label for="messageText">Ton message</label><input id="messageText" maxlength="240" required placeholder="Écris un message…"></div><p class="form-error" id="messageError" role="alert"></p><button class="button button-primary full-width" type="submit">Envoyer</button><p class="modal-footnote">Tu échanges avec un personnage IA fictif, jamais avec une personne réelle.</p></form></div>
+
+  <nav class="bottom-nav" id="bottomNav" aria-label="Navigation principale">
+    <button type="button" class="active" data-page="homePage" aria-current="page"><span aria-hidden="true">⌂</span>Accueil</button>
+    <button type="button" data-page="messagesPage"><span aria-hidden="true">✉</span>Messages</button>
+    <button type="button" data-page="personalPage"><span aria-hidden="true">●</span>Mes infos</button>
+  </nav>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
@@ -256,6 +330,12 @@ async function saveUserProfile() {
       state.likes=Array.isArray(state.likes)?state.likes:[];state.profile=state.profile&&typeof state.profile==="object"?state.profile:null;state.premium=Boolean(state.premium);
      let messageTarget=null,toastTimer;
 let completingProfile = false;
+let pendingSignupEmail = "";
+try { pendingSignupEmail = sessionStorage.getItem("munott-pending-signup-email") || ""; } catch (error) {}
+function rememberPendingSignup(email) {
+  pendingSignupEmail = email || "";
+  try { if (pendingSignupEmail) sessionStorage.setItem("munott-pending-signup-email", pendingSignupEmail); else sessionStorage.removeItem("munott-pending-signup-email"); } catch (error) {}
+}
       const conversations=new Map();
       const $=selector=>document.querySelector(selector);
       const escapeHTML=value=>String(value).replace(/[&<>"']/g,char=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[char]);
@@ -281,7 +361,7 @@ let completingProfile = false;
         $("#profiles").innerHTML=list.length?list.map(profile=>{
           const liked=state.likes.includes(profile.id);
           const gender=profile.gender==="F"?"Femme":"Homme";
-          return `<article class="profile-card ai-card"><div class="profile-photo"><img src="${portrait(profile)}" alt="Photo illustrative de ${gender.toLowerCase()} noir·e, profil fictif" loading="lazy"><span class="online"><i></i>Disponible</span><span class="ai-badge">COMPAGNON IA</span><button class="card-like${liked?" liked":""}" data-like="${profile.id}" aria-label="${liked?"Retirer le like de":"Liker"} ${escapeHTML(profile.name)}" aria-pressed="${liked}">${liked?"♥":"♡"}</button></div><div class="profile-info"><div class="profile-name"><h3>${escapeHTML(profile.name)}, ${profile.age}</h3></div><div class="profile-location">⌖ &nbsp;${escapeHTML(profile.city)} · ${gender}</div><div class="card-actions"><button class="button button-primary button-small" data-like="${profile.id}">${liked?"Aimé ✓":"J'aime"}</button><button class="button button-light button-small" data-message="${profile.id}">Discuter</button></div></div></article>`;
+          return `<article class="profile-card ai-card"><div class="profile-photo"><img src="${portrait(profile)}" alt="Illustration d'un personnage IA, ${escapeHTML(profile.name)}" loading="lazy"><span class="ai-badge">COMPAGNON IA</span></div><div class="profile-info"><div class="profile-name"><h3>${escapeHTML(profile.name)}, ${profile.age}</h3></div><div class="profile-location">⌖ &nbsp;${escapeHTML(profile.city)} · ${gender}</div><div class="card-actions"><button class="button button-primary button-small" data-message="${profile.id}">Parler avec MUNOTT+</button></div></div></article>`;
         }).join(""):'<div class="empty-state">Aucun profil dans cette sélection. Essaie une autre ville ou tranche d’âge.</div>';
       }
       $("#heroPortrait").src=portrait({id:"ai1",gender:"F"});
@@ -338,7 +418,7 @@ let completingProfile = false;
       document.addEventListener("click",event=>{
         const likeButton=event.target.closest("[data-like]"),messageButton=event.target.closest("[data-message]");
         if(likeButton)likeProfile(likeButton.dataset.like);
-        if(messageButton){if(!requireProfile())return;messageTarget=profiles.find(profile=>profile.id===messageButton.dataset.message);if(!conversations.has(messageTarget.id))conversations.set(messageTarget.id,[{speaker:"ai",text:`Salut ! Je suis ${messageTarget.name}, un personnage IA fictif. Je ne suis pas une vraie personne, mais je peux discuter avec toi.`}]);$("#messageSubtitle").textContent=`Discussion de démonstration avec ${messageTarget.name}, personnage IA.`;$("#messageText").value="";$("#messageError").style.display="none";renderConversation();openModal("messageModal")}
+        if(messageButton){if(!state.premium){openModal("premiumModal");showToast("MUNOTT+ est nécessaire pour discuter avec les compagnons IA.");return;}if(!requireProfile())return;messageTarget=profiles.find(profile=>profile.id===messageButton.dataset.message);if(!conversations.has(messageTarget.id))conversations.set(messageTarget.id,[{speaker:"ai",text:`Salut ! Je suis ${messageTarget.name}, un personnage IA fictif. Je ne suis pas une vraie personne, mais je peux discuter avec toi.`}]);$("#messageSubtitle").textContent=`Discussion de démonstration avec ${messageTarget.name}, personnage IA.`;$("#messageText").value="";$("#messageError").style.display="none";renderConversation();openModal("messageModal")}
         if(event.target.matches("[data-close]"))closeModal(event.target.closest(".modal-backdrop"));
         if(event.target.classList.contains("modal-backdrop"))closeModal(event.target);
       });
@@ -353,6 +433,7 @@ let completingProfile = false;
           field.closest(".field").hidden = completing;
         });
       };
+      window.MUNOTT_OPEN_PROFILE = () => { completingProfile=true; setSignupMode(true); openModal("signupModal"); };
       ["signupTop","signupHero"].forEach(id=>document.getElementById(id).addEventListener("click",()=>{completingProfile=false;setSignupMode(false);openModal("signupModal")}));
       ["premiumTop","premiumBand"].forEach(id=>document.getElementById(id).addEventListener("click",()=>openModal("premiumModal")));
       document.getElementById("loginTop").addEventListener("click",()=>openModal("loginModal"));
@@ -438,44 +519,21 @@ $("#signupForm").addEventListener("submit", async event => {
   };
 
   try {
-    // CAS 1 : utilisateur déjà connecté qui complète son profil
     if (completingProfile) {
       const result = await saveUserProfile();
+      const { data: authData, error: authError } = await supabaseClient.auth.getUser();
+      if (authError || !authData.user) throw new Error("Session utilisateur introuvable.");
 
-      const { data: authData, error: authError } =
-        await supabaseClient.auth.getUser();
-
-      if (authError || !authData.user) {
-        throw new Error("Session utilisateur introuvable.");
-      }
-
-      state.profile = {
-        id: authData.user.id,
-        name: result.name,
-        age: result.age,
-        city: result.city
-      };
-
+      state.profile = {id: authData.user.id, name: result.name, age: result.age, city: result.city};
       save();
-
       completingProfile = false;
-
-      $("#email").disabled = false;
-      $("#password").disabled = false;
-      $("#confirmPassword").disabled = false;
-      ["email", "password", "confirmPassword"].forEach(id => {
-        const field = document.getElementById(id);
-        field.required = true;
-        field.closest(".field").hidden = false;
-      });
       setSignupMode(false);
-
       closeModal($("#signupModal"));
       showToast("Ton profil MUNOTT a été enregistré avec succès !");
+      window.dispatchEvent(new Event("munott:profile-saved"));
       return;
     }
 
-    // CAS 2 : nouvel utilisateur qui crée son compte
     const email = $("#email").value.trim();
     const password = $("#password").value;
     const confirmPassword = $("#confirmPassword").value;
@@ -484,35 +542,121 @@ $("#signupForm").addEventListener("submit", async event => {
       showError("Le mot de passe doit contenir au moins 8 caractères.");
       return;
     }
-
     if (password !== confirmPassword) {
       showError("Les deux mots de passe ne correspondent pas.");
       return;
     }
 
-    const { error } = await supabaseClient.auth.signUp({
-      email,
-      password,
-      options: {
-        emailRedirectTo: window.location.origin + window.location.pathname
-      }
-    });
-
+    const {data: signupData, error} = await supabaseClient.auth.signUp({email, password});
     if (error) {
       showError(error.message);
       return;
     }
 
-    showToast("Compte créé ! Consulte ta boîte e-mail pour confirmer ton adresse.");
-    closeModal($("#signupModal"));
+    if (signupData.session && signupData.user) {
+      completingProfile = true;
+      setSignupMode(true);
+      const result = await saveUserProfile();
+      state.profile = {id: signupData.user.id, name: result.name, age: result.age, city: result.city};
+      save();
+      completingProfile = false;
+      setSignupMode(false);
+      closeModal($("#signupModal"));
+      showToast("Compte et profil créés avec succès !");
+      window.dispatchEvent(new Event("munott:profile-saved"));
+      return;
+    }
 
+    rememberPendingSignup(email);
+    $("#signupOtpEmail").textContent = email;
+    $("#signupOtp").value = "";
+    $("#signupOtpError").style.display = "none";
+    closeModal($("#signupModal"));
+    openModal("signupOtpModal");
+    showToast("Code envoyé. Consulte ta boîte e-mail.");
   } catch (error) {
     console.error("Erreur MUNOTT :", error);
     showError(error.message || "Une erreur est survenue. Réessaie.");
   }
 });
-      $("#messageForm").addEventListener("submit",event=>{
+
+$("#signupOtpForm").addEventListener("submit", async event => {
+  event.preventDefault();
+  const errorBox = $("#signupOtpError");
+  const submitButton = $("#signupOtpForm button[type=submit]");
+  errorBox.style.display = "none";
+  const email = pendingSignupEmail;
+  const token = $("#signupOtp").value.trim();
+
+  if (!email) {
+    errorBox.textContent = "Recommence l’inscription pour demander un nouveau code.";
+    errorBox.style.display = "block";
+    return;
+  }
+  if (!/^[0-9]{6}$/.test(token)) {
+    errorBox.textContent = "Entre les 6 chiffres du code reçu.";
+    errorBox.style.display = "block";
+    return;
+  }
+
+  submitButton.disabled = true;
+  try {
+    const {data, error} = await supabaseClient.auth.verifyOtp({email, token, type: "email"});
+    if (error) throw error;
+    if (!data.session || !data.user) throw new Error("La confirmation n’a pas ouvert de session. Réessaie.");
+
+    completingProfile = true;
+    setSignupMode(true);
+    closeModal($("#signupOtpModal"));
+    openModal("signupModal");
+
+    const result = await saveUserProfile();
+    state.profile = {id: data.user.id, name: result.name, age: result.age, city: result.city};
+    save();
+    completingProfile = false;
+    setSignupMode(false);
+    closeModal($("#signupModal"));
+    rememberPendingSignup("");
+    showToast("Adresse confirmée et profil enregistré !");
+    window.dispatchEvent(new Event("munott:profile-saved"));
+  } catch (error) {
+    console.error("Erreur de confirmation MUNOTT :", error);
+    if (completingProfile) {
+      $("#signupError").textContent = error.message || "Le profil n’a pas pu être enregistré. Réessaie.";
+      $("#signupError").style.display = "block";
+    } else {
+      errorBox.textContent = error.message || "Code invalide ou expiré. Vérifie-le et réessaie.";
+      errorBox.style.display = "block";
+    }
+  } finally {
+    submitButton.disabled = false;
+  }
+});
+
+$("#resendSignupOtp").addEventListener("click", async () => {
+  const errorBox = $("#signupOtpError");
+  const button = $("#resendSignupOtp");
+  errorBox.style.display = "none";
+  if (!pendingSignupEmail) {
+    errorBox.textContent = "Recommence l’inscription pour demander un nouveau code.";
+    errorBox.style.display = "block";
+    return;
+  }
+  button.disabled = true;
+  try {
+    const {error} = await supabaseClient.auth.resend({type: "signup", email: pendingSignupEmail});
+    if (error) throw error;
+    showToast("Un nouveau code a été envoyé.");
+  } catch (error) {
+    errorBox.textContent = error.message || "Impossible de renvoyer le code pour le moment.";
+    errorBox.style.display = "block";
+  } finally {
+    button.disabled = false;
+  }
+});
+$("#messageForm").addEventListener("submit",event=>{
         event.preventDefault();const errorBox=$("#messageError");
+        if(!state.premium){closeModal($("#messageModal"));openModal("premiumModal");errorBox.textContent="L’abonnement MUNOTT+ est nécessaire pour envoyer un message.";errorBox.style.display="block";return}
         if(!$("#messageText").value.trim()){errorBox.textContent="Écris ton message avant de l'envoyer.";errorBox.style.display="block";return}
         if(!state.premium&&(state.messagesToday||0)>=3){errorBox.textContent="Tu as utilisé tes 3 messages gratuits aujourd'hui. Passe à Premium pour écrire sans limite.";errorBox.style.display="block";return}
         state.messagesToday=(state.messagesToday||0)+1;save();
@@ -528,8 +672,286 @@ $("#signupForm").addEventListener("submit", async event => {
       const openPayment=text=>window.open(`https://wa.me/243998353158?text=${encodeURIComponent(text)}`,"_blank","noopener,noreferrer");
       $("#premiumPay").addEventListener("click",()=>openPayment("Bonjour MUNOTT, je souhaite m'abonner à Premium pour 2 $ par semaine."));
       $("#boostPay").addEventListener("click",()=>openPayment("Bonjour MUNOTT, je souhaite être le profil n°1 de ma ville pendant 24 h pour 2 $."));
+      if (pendingSignupEmail) {
+        $("#signupOtpEmail").textContent = pendingSignupEmail;
+        supabaseClient.auth.getSession().then(async ({data}) => {
+          const currentEmail = data.session?.user?.email;
+          if (currentEmail && currentEmail.toLowerCase() === pendingSignupEmail.toLowerCase()) {
+            const {data: existingProfile} = await supabaseClient.from("profiles").select("id").eq("id", data.session.user.id).maybeSingle();
+            rememberPendingSignup("");
+            if (!existingProfile) { completingProfile = true; setSignupMode(true); openModal("signupModal"); }
+          } else { openModal("signupOtpModal"); }
+        }).catch(error => { console.error("Reprise de la confirmation impossible :", error); openModal("signupOtpModal"); });
+      }
       document.addEventListener("keydown",event=>{if(event.key==="Escape")document.querySelectorAll(".modal-backdrop.open").forEach(closeModal)});
     })();
   </script>
+
+<script>
+(() => {
+  const main = document.querySelector("main.shell");
+  if (!main) return;
+  const hero = main.querySelector(".hero");
+  const discovery = main.querySelector("#decouvrir");
+  const premiumBand = main.querySelector("#serieux");
+  const rules = main.querySelector(".rules-strip");
+  if (!hero || !discovery || !premiumBand || !rules) return;
+
+  const home = document.createElement("section");
+  home.id = "homePage";
+  home.className = "app-page";
+
+  const messages = document.createElement("section");
+  messages.id = "messagesPage";
+  messages.className = "app-page";
+  messages.hidden = true;
+
+  const personal = document.createElement("section");
+  personal.id = "personalPage";
+  personal.className = "app-page personal-panel";
+  personal.hidden = true;
+
+  const featured = document.createElement("section");
+  featured.className = "top-profile";
+  featured.innerHTML =
+    '<div class="top-profile-head"><div><span class="profile-rank">LE PLUS AIMÉ</span><h2>Profil n° 1 de ta ville</h2><p>Classé selon les likes reçus par les membres de cette ville.</p></div>' +
+    '<label class="sr-only" for="leaderboardCity">Ville du classement</label><select id="leaderboardCity" aria-label="Choisir la ville du classement"></select></div>' +
+    '<div class="top-profile-content" id="topProfileContent"><div class="member-empty">Chargement du classement…</div></div>';
+
+  const memberSection = document.createElement("section");
+  memberSection.className = "member-section";
+  memberSection.innerHTML =
+    '<h2>Les profils de ta ville</h2><p>Découvre les membres et aide la communauté à faire ressortir son profil préféré.</p>' +
+    '<div class="member-grid" id="memberGrid"><div class="member-empty">Chargement des profils…</div></div>';
+
+  const messageHeader = document.createElement("div");
+  messageHeader.className = "messages-heading";
+  messageHeader.innerHTML =
+    '<span class="eyebrow"><span class="eyebrow-dot"></span>MUNOTT+</span><h1>Messages</h1>' +
+    '<p>Explore les compagnons IA et ouvre une conversation avec MUNOTT+. Ces personnages sont fictifs et leurs réponses sont simulées.</p>';
+
+  const personalTitle = document.createElement("div");
+  personalTitle.innerHTML =
+    '<span class="eyebrow"><span class="eyebrow-dot"></span>Mon compte</span><h1>Mes informations</h1>' +
+    '<p>Consulte les informations privées de ton compte. Ton numéro WhatsApp reste visible uniquement ici.</p>';
+
+  const personalCard = document.createElement("div");
+  personalCard.className = "personal-card";
+  personalCard.id = "personalCard";
+  personalCard.innerHTML = '<p class="member-empty">Chargement de tes informations…</p>';
+
+  home.append(hero, featured, memberSection, premiumBand, rules);
+  messages.append(messageHeader, discovery);
+  personal.append(personalTitle, personalCard);
+  main.replaceChildren(home, messages, personal);
+
+  discovery.querySelector(".section-top h2").textContent = "Compagnons IA";
+  discovery.querySelector(".section-top p").textContent = "Choisis un personnage pour découvrir la conversation MUNOTT+.";
+  const freeNote = discovery.querySelector(".free-note");
+  if (freeNote) freeNote.innerHTML = "<strong>Les conversations IA sont réservées à MUNOTT+.</strong> Tu peux découvrir les personnages gratuitement.";
+
+  const citySelect = document.getElementById("leaderboardCity");
+  const cities = ["Kinshasa","Lubumbashi","Goma","Bukavu","Brazzaville","Pointe-Noire","Douala","Yaoundé","Libreville","Bangui","Autre"];
+  cities.forEach(city => {
+    const option = document.createElement("option");
+    option.value = city;
+    option.textContent = city;
+    citySelect.append(option);
+  });
+  citySelect.value = "Kinshasa";
+
+  const tabs = document.getElementById("bottomNav");
+  const pages = [home, messages, personal];
+  let chosenCity = false;
+  let homeRequest = 0;
+
+  const notify = message => {
+    const toast = document.getElementById("toast");
+    toast.textContent = message;
+    toast.classList.add("show");
+    window.setTimeout(() => toast.classList.remove("show"), 3200);
+  };
+  const escapeHTML = value => String(value ?? "").replace(/[&<>"']/g, char =>
+    ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[char]
+  );
+  const publicPhoto = path => {
+    if (!path) return "";
+    if (/^https?:\/\//i.test(path)) return path;
+    return supabaseClient.storage.from("profile-photos").getPublicUrl(path).data.publicUrl;
+  };
+  const photoHTML = (profile, className) => {
+    const url = publicPhoto(profile.photo_url);
+    return url
+      ? '<img class="' + className + '" src="' + escapeHTML(url) + '" alt="Photo de ' + escapeHTML(profile.display_name) + '" loading="lazy">'
+      : '<div class="' + className + ' profile-placeholder" aria-label="Photo non disponible">' + escapeHTML((profile.display_name || "M").slice(0,1).toUpperCase()) + '</div>';
+  };
+
+  function switchPage(id) {
+    pages.forEach(page => { page.hidden = page.id !== id; });
+    tabs.querySelectorAll("button[data-page]").forEach(button => {
+      const active = button.dataset.page === id;
+      button.classList.toggle("active", active);
+      if (active) button.setAttribute("aria-current", "page");
+      else button.removeAttribute("aria-current");
+    });
+    window.scrollTo({top: 0, behavior: "smooth"});
+    if (id === "homePage") refreshHome();
+    if (id === "personalPage") refreshPersonal();
+  }
+  tabs.addEventListener("click", event => {
+    const button = event.target.closest("button[data-page]");
+    if (button) switchPage(button.dataset.page);
+  });
+  document.querySelectorAll('a[href="#decouvrir"]').forEach(link => {
+    link.addEventListener("click", event => {
+      event.preventDefault();
+      switchPage("messagesPage");
+    });
+  });
+
+  const topContent = document.getElementById("topProfileContent");
+  const memberGrid = document.getElementById("memberGrid");
+
+  function renderMemberCard(profile, liked, viewerId) {
+    const isSelf = profile.id === viewerId;
+    const buttonText = isSelf ? "Ton profil" : (liked ? "Aimé ✓" : "J’aime");
+    return '<article class="profile-card"><div class="profile-photo">' + photoHTML(profile, "") +
+      '<span class="online"><i></i>Membre</span></div><div class="profile-info">' +
+      '<div class="profile-name"><h3>' + escapeHTML(profile.display_name) + ', ' + escapeHTML(profile.age) + '</h3></div>' +
+      '<div class="profile-location">⌖ &nbsp;' + escapeHTML(profile.city) + '</div><div class="card-actions">' +
+      '<button class="button button-' + (liked ? 'light' : 'primary') + ' button-small" data-member-like="' + escapeHTML(profile.id) +
+      '" aria-pressed="' + String(liked) + '"' + (isSelf ? ' disabled' : '') + '>' + buttonText + '</button></div></div></article>';
+  }
+
+  async function refreshHome() {
+    const request = ++homeRequest;
+    const city = citySelect.value || "Kinshasa";
+    topContent.innerHTML = '<div class="member-empty">Chargement du classement…</div>';
+    memberGrid.innerHTML = '<div class="member-empty">Chargement des profils…</div>';
+    try {
+      const {data: authData} = await supabaseClient.auth.getUser();
+      const viewer = authData?.user || null;
+      if (viewer && !chosenCity) {
+        const own = await supabaseClient.from("profiles").select("city").eq("id", viewer.id).maybeSingle();
+        if (own.data?.city && cities.includes(own.data.city)) {
+          citySelect.value = own.data.city;
+          chosenCity = true;
+          return refreshHome();
+        }
+      }
+      const {data: ranked, error} = await supabaseClient.rpc("get_city_profiles_ranked", {p_city: city});
+      if (error) throw error;
+      if (request !== homeRequest) return;
+      const profiles = Array.isArray(ranked) ? ranked : [];
+      let likedIds = new Set();
+      if (viewer) {
+        const likes = await supabaseClient.from("profile_likes").select("profile_id").eq("liker_id", viewer.id);
+        if (likes.error) throw likes.error;
+        likedIds = new Set((likes.data || []).map(row => row.profile_id));
+      }
+      if (!profiles.length) {
+        topContent.innerHTML = '<div class="member-empty">Aucun membre n’a encore complété son profil à ' + escapeHTML(city) + '. Le premier profil apparaîtra ici après son inscription.</div>';
+        memberGrid.innerHTML = '<div class="member-empty">Les profils réels de cette ville apparaîtront ici après leur inscription.</div>';
+        return;
+      }
+      const top = profiles[0];
+      const topLiked = likedIds.has(top.id);
+      const ownTop = top.id === viewer?.id;
+      topContent.innerHTML =
+        '<article class="top-profile-card">' + photoHTML(top, "top-profile-photo") +
+        '<div class="top-profile-copy"><span class="profile-rank">N° 1 · ' + Number(top.likes_count || 0) + ' like' + (Number(top.likes_count || 0) === 1 ? '' : 's') + '</span>' +
+        '<h3>' + escapeHTML(top.display_name) + ', ' + escapeHTML(top.age) + '</h3><p>⌖ &nbsp;' + escapeHTML(top.city) + ' · le profil le plus aimé de la ville</p>' +
+        '<button class="button button-' + (topLiked ? 'light' : 'primary') + '" data-member-like="' + escapeHTML(top.id) +
+        '" aria-pressed="' + String(topLiked) + '"' + (ownTop ? ' disabled' : '') + '>' + (ownTop ? 'Ton profil' : (topLiked ? 'Aimé ✓' : 'J’aime ce profil')) + '</button></div></article>';
+      memberGrid.innerHTML = profiles.map(profile => renderMemberCard(profile, likedIds.has(profile.id), viewer?.id)).join("");
+    } catch (error) {
+      console.error("Classement MUNOTT indisponible :", error);
+      topContent.innerHTML = '<div class="member-empty">Le classement attend la configuration Supabase. Le script de configuration MUNOTT doit être appliqué dans le SQL Editor.</div>';
+      memberGrid.innerHTML = '<div class="member-empty">Impossible de charger les profils pour le moment.</div>';
+    }
+  }
+
+  async function refreshPersonal() {
+    personalCard.innerHTML = '<p class="member-empty">Chargement de tes informations…</p>';
+    const {data: authData, error: authError} = await supabaseClient.auth.getUser();
+    if (authError || !authData?.user) {
+      personalCard.innerHTML = '<h2>Connecte-toi à ton compte</h2><p>Après connexion, tu pourras consulter tes informations.</p><button class="button button-primary" data-open-login>Se connecter</button>';
+      return;
+    }
+    const user = authData.user;
+    const [profileResult, privateResult] = await Promise.all([
+      supabaseClient.from("profiles").select("display_name,age,city,photo_url").eq("id", user.id).maybeSingle(),
+      supabaseClient.from("profile_private").select("whatsapp").eq("id", user.id).maybeSingle()
+    ]);
+    if (profileResult.error || privateResult.error) {
+      personalCard.innerHTML = '<p class="member-empty">Impossible de lire les informations. Vérifie les autorisations Supabase des tables profiles et profile_private.</p>';
+      return;
+    }
+    if (!profileResult.data) {
+      personalCard.innerHTML = '<h2>Ton profil n’est pas encore complété</h2><p>Ajoute les informations et la photo demandées pour les enregistrer dans Supabase.</p><button class="button button-primary" data-open-complete>Compléter mon profil</button>';
+      return;
+    }
+    const p = profileResult.data;
+    const photo = publicPhoto(p.photo_url);
+    personalCard.innerHTML =
+      (photo ? '<img src="' + escapeHTML(photo) + '" alt="Ta photo de profil" style="width:90px;height:90px;object-fit:cover;border-radius:50%">' : '') +
+      '<div class="personal-info"><div><small>Nom ou pseudo</small><strong>' + escapeHTML(p.display_name) + '</strong></div>' +
+      '<div><small>Âge</small><strong>' + escapeHTML(p.age) + '</strong></div><div><small>Ville</small><strong>' + escapeHTML(p.city) + '</strong></div>' +
+      '<div><small>WhatsApp (privé)</small><strong>' + escapeHTML(privateResult.data?.whatsapp || "Non renseigné") + '</strong></div></div>' +
+      '<p>La photo et le profil sont enregistrés dans Supabase. Ton numéro reste dans la table privée.</p>';
+  }
+
+  document.addEventListener("click", async event => {
+    if (event.target.closest("[data-open-login]")) {
+      document.getElementById("loginModal").classList.add("open");
+      return;
+    }
+    if (event.target.closest("[data-open-complete]")) {
+      if (window.MUNOTT_OPEN_PROFILE) window.MUNOTT_OPEN_PROFILE();
+      return;
+    }
+    const button = event.target.closest("[data-member-like]");
+    if (!button) return;
+    const profileId = button.dataset.memberLike;
+    const {data: authData, error: authError} = await supabaseClient.auth.getUser();
+    if (authError || !authData?.user) {
+      document.getElementById("loginModal").classList.add("open");
+      return;
+    }
+    if (profileId === authData.user.id) {
+      notify("Tu ne peux pas liker ton propre profil.");
+      return;
+    }
+    button.disabled = true;
+    const existing = await supabaseClient.from("profile_likes").select("profile_id")
+      .eq("liker_id", authData.user.id).eq("profile_id", profileId).maybeSingle();
+    if (existing.error) {
+      button.disabled = false;
+      notify("Impossible de vérifier le like. Vérifie la configuration Supabase.");
+      return;
+    }
+    const result = existing.data
+      ? await supabaseClient.from("profile_likes").delete().eq("liker_id", authData.user.id).eq("profile_id", profileId)
+      : await supabaseClient.from("profile_likes").insert({liker_id: authData.user.id, profile_id: profileId});
+    if (result.error) {
+      button.disabled = false;
+      notify("Le like n’a pas pu être enregistré.");
+      return;
+    }
+    await refreshHome();
+  });
+  citySelect.addEventListener("change", () => {
+    chosenCity = true;
+    refreshHome();
+  });
+  window.addEventListener("munott:profile-saved", () => {
+    refreshPersonal();
+    refreshHome();
+  });
+  refreshHome();
+  refreshPersonal();
+})();
+</script>
+
 </body>
 </html>
